@@ -40,7 +40,7 @@ const mapStateToProps = state => {
     return {
         loggedIn : state.auth.loggedIn,
         username : state.auth.username,
-        selectedMovie: ''
+        selectedMovie: state.movie.selectedMovie
     }
 }
 
