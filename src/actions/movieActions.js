@@ -29,7 +29,7 @@ export function setMovie(movie) {
     }
 }
 
-export function setReview( comment, rating) {
+export function setReview(title, comment, rating) {
     const env = runtimeEnv();
     return dispatch => {
         return fetch(`${env.REACT_APP_API_URL}/reviews`, {
@@ -41,7 +41,7 @@ export function setReview( comment, rating) {
             },
             body: JSON.stringify({
                 "reviewersname": localStorage.getItem('reviewersname'),
-
+                "title": title,
                 "comment": comment,
                 "rating": rating
             }),

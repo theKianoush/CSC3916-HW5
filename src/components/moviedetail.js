@@ -40,6 +40,8 @@ class MovieDetail extends Component {
 
 
 
+
+
     render() {
         const DetailInfo = () => {
             if (!this.props.selectedMovie) {
@@ -75,7 +77,7 @@ class MovieDetail extends Component {
                     <Form
                         onSubmit={setReview(this.props.selectedMovie.title, this.state.reviewText, this.state.reviewRating)}>
                         <b>Submit Review</b>
-                        <Form.Control as="textarea" rows={3} placeholder="How'd you like the movie?"
+                        <Form.Control as="textarea" rows={3} placeholder="What was your favorite part of the movie?"
                                       value={this.state.reviewText} onChange={this.handleReviewChange}/>
                         <Form.Group controlId="exampleForm.ControlSelect1">
                             <Form.Label>Select rating <BsStarFill/></Form.Label>
@@ -90,7 +92,6 @@ class MovieDetail extends Component {
                         </Form.Group>
                         <Button variant="primary" type="submit">Submit review</Button>
                     </Form>
-
 
 
                 </Card>
