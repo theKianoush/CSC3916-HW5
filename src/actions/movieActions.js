@@ -29,6 +29,32 @@ export function setMovie(movie) {
     }
 }
 
+export function setReview( comment, rating) {
+    const env = runtimeEnv();
+    return dispatch => {
+        return fetch(`${env.REACT_APP_API_URL}/reviews`, {
+            method: 'POST',
+            headers: {
+                'Accept': 'application/json',
+                'Content-Type': 'application/json',
+                'Authorization': localStorage.getItem('token')
+            },
+            body: JSON.stringify({
+                "reviewersname": localStorage.getItem('reviewersname'),
+
+                "comment": comment,
+                "rating": rating
+            }),
+            mode: 'cors'
+        }).then((response) => {
+            if (!response.ok) {
+                throw Error(response.statusText);
+            }
+            return response.json()
+        }).catch((e) => console.log(e));
+    }
+}
+
 export function fetchMovie(movieId) {
     const env = runtimeEnv();
     return dispatch => {
