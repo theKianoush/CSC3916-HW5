@@ -74,6 +74,7 @@ class MovieDetail extends Component {
                         )}
                     </Card.Body>
 
+
                     <Form
                         onSubmit={setReview(this.props.selectedMovie.title, this.state.reviewText, this.state.reviewRating)}>
                         <b>Submit Review</b>

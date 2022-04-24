@@ -40,7 +40,7 @@ export function setReview(title, comment, rating) {
                 'Authorization': localStorage.getItem('token')
             },
             body: JSON.stringify({
-                "reviewersname": localStorage.getItem('reviewersname'),
+                "reviewersname": localStorage.getItem('username'),
                 "title": title,
                 "comment": comment,
                 "rating": rating
